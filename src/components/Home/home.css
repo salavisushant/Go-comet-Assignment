@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.set {
+  display: grid;
+  grid-template-columns: repeat(5, 18%);
+  grid-gap: 2%;
+  width: 95%;
+  height: 40%;
+  margin-left: 4%;
+  margin-top: 1%;
+
+}
+
+*{
+  font-family: 'Open Sans', sans-serif;
+}
+
+button{
+  border: none;
+  background-color: #e91e63;
+  color: #FFFF;
+  font-weight:300;
+  height:7%
+}
+
+button:hover{
+  border-radius: 15px;
+  cursor: pointer;
+}
