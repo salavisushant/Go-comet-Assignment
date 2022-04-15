@@ -27,6 +27,7 @@
 
 .mainBox {
   position: relative;
+    z-index: 1;
 }
 
 .overlay {
@@ -44,6 +45,7 @@
 .prodImg{
   width: 100%;
   left: 0;
+
 }
 
 

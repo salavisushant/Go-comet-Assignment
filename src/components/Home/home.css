@@ -22,15 +22,3 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-button{
-  border: none;
-  background-color: #e91e63;
-  color: #FFFF;
-  font-weight:300;
-  height:7%
-}
-
-button:hover{
-  border-radius: 15px;
-  cursor: pointer;
-}

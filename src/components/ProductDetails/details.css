@@ -1,29 +1,24 @@
 .detailDiv{
     margin-top:8%;
     width:100%;
-    border: 1px solid black;
     display: grid;
-    grid-template-columns: 55% 40%;
-    gap:2%;
+    grid-template-columns: 50% 45%;
+    gap:1%;
 }
 
 
 .picDiv{
-    border: 1px solid red;
-    margin-left: 5%;
+    margin-left: 4%;
     display:grid;
     grid-template-columns:repeat(2,45%);
     gap:1%;
 }
 
-.infoDiv{
-    border: 1px solid green;
-}
 
 .picImg{
     width: 100%;
     height: 90%;
-    margin-left:5%;
+    margin-left:0%;
     transition: 0.3s;
     cursor: zoom-in;
 }
@@ -34,5 +29,85 @@ transform: scale(1.1);
 }
 
 .ratingFlex{
+    border: 1px solid #D3D4D8;
+    width: 30%;
+    height:3.5%;
     display: flex;
+}
+
+.ratingFlex:hover{
+    border: 1px solid black;
+}
+
+.sizeDiv ,.sizeDiv1{
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    border-radius:25px;
+    margin-left: 10px;
+}
+
+.sizeDiv p{
+    text-align: center;
+    font-size:22px;
+    margin-top:14%;
+}
+
+.sizeDiv1 p{
+    text-align: center;
+    font-size:22px;
+    margin-top:14%;
+}
+
+.sizeDiv:hover{
+    border: 1px solid #FF4D88;
+    cursor: pointer;
+}
+
+.sizeDiv1:hover{
+      border: 1px solid #FF4D88;
+    cursor: pointer;
+}
+
+.btnBag{
+    background-color: #FF527B;
+    color: #FFFFFF;
+    border:none;
+    width: 35%;
+    height:60px;
+    font-size:1.5vw;
+    font-weight:700;
+    border-radius:6px;
+}
+
+.btnWish{
+    margin-left:4%;
+    background-color:#FFFFFF;
+    border:1px solid black;
+    font-size:1.5vw;
+    font-weight:700;
+    border-radius:6px;
+}
+
+.prodDes{
+    font-size:1.7vw;
+    margin-top:4%;
+    font-weight: 700;
+}
+
+.desCri{
+    font-size:1.2vw;
+    font-weight: 500;
+}
+
+
+@media screen and (max-width: 683px) {
+   .detailDiv{
+        margin-top:8%;
+        width:100%;
+        display: grid;
+        grid-template-columns: 80%;
+        margin-left: 5%;
+        gap:1%;
+    }
 }

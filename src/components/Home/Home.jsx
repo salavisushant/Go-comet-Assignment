@@ -7,26 +7,26 @@ import "./home.css"
 export const Home = () => {
 
     return (
-        <div style={{marginTop:"5  %"}}>
+        <div style={{marginTop:"5%"}}>
                <Carousel>
-               <Carousel.Item interval={1000}>
+               <Carousel.Item interval={2000}>
                <img
                     className="d-block w-100"
-                    src="https://user-images.githubusercontent.com/87421852/163189001-70f13d44-5680-4bf0-8610-eb8a0c2a1911.png"
+                   src="https://user-images.githubusercontent.com/87421852/163519455-757ad941-95eb-40c7-a611-38e151303802.png"
                     alt="First slide"
                />
                </Carousel.Item>
-               <Carousel.Item interval={500}>
+               <Carousel.Item interval={2000}>
                <img
                     className="d-block w-100"
-                    src="https://user-images.githubusercontent.com/87421852/163188946-e0c4351a-abe2-479e-bf51-73ec8c98f2bc.png"
+                    src="https://user-images.githubusercontent.com/87421852/163519429-b33e86ba-b170-4746-b1f5-7023955489dc.png"
                     alt="Second slide"
                />
                </Carousel.Item>
-               <Carousel.Item>
+               <Carousel.Item interval={2000}>
                <img
                     className="d-block w-100"
-                    src="https://user-images.githubusercontent.com/87421852/163188977-c906dd8f-e78a-43a8-a14f-82c94500b59e.png"
+                    src="https://user-images.githubusercontent.com/87421852/163519444-33555558-f055-4260-94aa-40f175a838c5.png"
                     alt="Third slide"
                />
                </Carousel.Item>
