@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Modal } from "react-bootstrap";
+import "./navbar.css"
+
+import { useState,useEffect } from "react";
 
 const Div = styled.nav`
 position:fixed;
@@ -20,7 +24,24 @@ background-color:#FFFFFF;
   0 80px 60px rgba(0, 0, 0, 0.10)
 `
 
-export const Navbar=()=> {
+export const Navbar = () => {
+  const [lgShow, setLgShow] = useState(false);
+  const [bag, setbag] = useState([]);
+  const [cartLength, setCartLength] = useState([])
+
+  useEffect(() => {
+    showBag()
+  },[])
+
+
+  const showBag = async () => {
+    let res = await fetch("http://localhost:4000/cart");
+    let data = await res.json();
+    setbag(data.cart);
+    setCartLength(data.cart.length);
+    console.log(data);
+  }
+  
   return (
     <>
     <Div>
@@ -32,8 +53,37 @@ export const Navbar=()=> {
           <Link style={{marginLeft:"2%",fontWeight:"bold",fontSize:"17px",textDecoration:"none",color: '#282C3F'}} to="/Products">Home & Living</Link>
         <p style={{ marginLeft: "40%" }}><img style={{ marginLeft: "15%" }} src="https://img.icons8.com/material-outlined/24/000000/gender-neutral-user.png" alt="" /><br></br><span>Login</span></p>
        <Link style={{marginLeft:"2%",fontSize:"17px",textDecoration:"none",color: '#282C3F'}} to="/wishlist"> <p style={{ marginLeft: "2%" }}><img style={{ marginLeft: "25%" }} src="https://img.icons8.com/material-outlined/24/000000/like--v1.png" alt="" /><br></br><span>Wishlist</span></p></Link>
-        <Link style={{marginLeft:"2%",fontSize:"17px",textDecoration:"none",color: '#282C3F'}} to="/cart/:id"> <p><img style={{marginLeft:"3%"}} src="https://img.icons8.com/material-outlined/24/000000/shopping-bag--v1.png" alt=""/><br></br><span>Bag</span></p></Link>
+       <p onClick={() => setLgShow(true)} className="bagButn" ><img style={{marginLeft:"3%"}} src="https://img.icons8.com/material-outlined/24/000000/shopping-bag--v1.png" alt=""/><br></br><span>Bag</span></p>
       </Div>
+          <Modal
+        size="md"
+        show={lgShow}
+        onHide={() => setLgShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">
+            {cartLength} Items in the cart
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {
+            bag.map((el) => (
+              <div className="modal-div" >
+                <div style={{border: '1px solid red'}}>
+                  <img className="modalImg" src={el.images} alt="" />
+                </div>
+                <div style={{border: '1px solid red'}}>
+                  <p>{el.brand}</p>
+                  <p>{ el.category}</p>
+                </div>
+            
+              </div>
+            ))
+          }
+              <hr/>
+        </Modal.Body>
+      </Modal>
     </>
   );
 }

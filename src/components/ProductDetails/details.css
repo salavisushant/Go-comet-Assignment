@@ -2,7 +2,7 @@
     margin-top:8%;
     width:100%;
     display: grid;
-    grid-template-columns: 50% 45%;
+    grid-template-columns: 45% 48%;
     gap:1%;
 }
 
@@ -110,4 +110,37 @@ transform: scale(1.1);
         margin-left: 5%;
         gap:1%;
     }
+    .detailDiv{
+    margin-top:100px;
+}
+}
+
+.rateDiv{
+    width:100%;
+    height:160px;
+    display:grid;
+    grid-template-columns:30% 60%;
+    gap:1%;
+    margin-top: -15px;
+}
+
+.starDiv{
+    height: 155px;
+}
+
+.starOfrate{
+    margin-top:7%;
+    font-size:5.5vw;
+    font-weight: 300;
+    text-align:center;
+}
+
+.fourStar{
+    height:155px
+}
+
+.countRate{
+    margin-top: -30px;
+    text-align: center;
+    color:#9FA1A9;
 }

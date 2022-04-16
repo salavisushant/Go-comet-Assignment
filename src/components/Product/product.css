@@ -52,6 +52,8 @@
 .button {
   position: absolute;
   width: 100%;
+  border:none;
+  border:1px solid black;
   top: 64%;
   text-align: center;
   opacity: 0;
@@ -61,6 +63,7 @@
 .button .link {
   width: 100%;
   padding: 5% 8%;
+  border: none;
   text-align: center;
   background-color: white;
   color: black;

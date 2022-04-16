@@ -20,6 +20,34 @@ export const ProductDetails = () => {
         setListimage(data.images);
     }
 
+
+    const handleAddCart = (title, images, price, description, discount, off_price, ratings,brand,ageGroup,color,count,gender,sizes,category) => {
+        const payload = {
+            title: title,
+            images: images,
+            price: price,
+            description: description,
+            discount: discount,
+            off_price: off_price,
+            ratings: ratings,
+            brand: brand,
+            ageGroup: ageGroup,
+            color: color,
+            count: count,
+            gender: gender,
+            sizes: sizes,
+            category: category,
+        };
+          fetch("http://localhost:4000/cart", {
+                method: "POST",
+                body: JSON.stringify(payload),
+                headers: {
+                "Content-Type": "application/json",
+            },
+            }).then(alert(`${title} Added in the Cart`));
+                console.log(payload);     
+    }
+
     return (
         <div className="detailDiv">
             <div className="picDiv">
@@ -40,15 +68,18 @@ export const ProductDetails = () => {
                     <div style={{ display: "flex", justifyContent: "space-between", width: "50%", height: "50px" }}>
                   <div style={{ display: "flex"}}>  <div className="sizeDiv1"><p>S</p></div><div className="sizeDiv"><p>M</p></div><div className="sizeDiv"><p>L</p></div><div className="sizeDiv"><p>XL</p></div><div className="sizeDiv"><p>XXL</p></div></div></div>
                 <br />
-                <div style={{display: 'flex'}}><button className="btnBag"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/bag-front-view.png" alt=""/><span>ADD TO BAG</span></button><button className="btnWish"><img src="https://img.icons8.com/ios-glyphs/30/ff3f6c/like--v1.png" alt=""/><span>WISHLIST</span></button></div>
+                <div style={{display: 'flex'}}><button onClick={() => handleAddCart(list.title, list.images, list.price, list.description, list.discount, list.off_price, list.ratings, list.brand, list.ageGroup, list.color, list.count, list.gender, list.sizes, list.category)} className="btnBag"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/bag-front-view.png" alt=""/><span>ADD TO BAG</span></button><button className="btnWish"><img src="https://img.icons8.com/ios-glyphs/30/ff3f6c/like--v1.png" alt=""/><span>WISHLIST</span></button></div>
                 <hr/>
                 <p className="prodDes">PRODUCT DESCRIPTION <img src="https://img.icons8.com/ios/30/000000/document--v1.png" alt="" /></p>
                 <p className="desCri">{ list.description }</p>
                 <hr />
                 <p className="prodDes"> RATINGS <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/30/000000/external-stars-weather-dreamstale-lineal-dreamstale.png" alt=""/></p>
                 <div className="rateDiv">
-                    <div></div>
-                    <div></div>
+                    <div className="fourStar"> 
+                        <p className="starOfrate">{list.ratings}</p>
+                        <p className="countRate"> { list.count} Verified Buyers</p>
+                    </div>
+                    <div className="starDiv" ><img style={{width: "70%", height: "100%"}} src="https://user-images.githubusercontent.com/87421852/163599732-63be4b7a-c246-481f-aae8-100c1d4c11b7.png" alt="" /></div>
                 </div>
             </div>
          
