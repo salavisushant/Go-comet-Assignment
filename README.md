@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+### GoComet Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Deployed Link - https://go-comet-assignment-two.vercel.app/
 
-## Available Scripts
+## Tech Stack
+1. For Frontend - HTML,CSS,Javascript and ReactJs.
+2. For Backend - NodeJs, ExpressJS, and MongoDB.
+3. I used Bootstrap-React only for carousel and modal effect.
 
-In the project directory, you can run:
+## Deployment
+1. For Frontend deployement I used Vercel.
+2. for Backend deployement I used Heroku.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Landing Page
+1. Landing page with carousel effect.
+2. You can click on product which shown in navigation bar. also you can click on images you will go to product page.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<img width="959" alt="landing page" src="https://user-images.githubusercontent.com/87421852/163715660-80dd9777-d8ee-463d-9230-6967f167367e.png">
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Product Page
+1. In product page you can 20 products per page because I did pagination for this project.
+2. Overlay effect added for wishlist button showing after hover. you can simply added product in  wishlist page.
+3. Various sorting functionalities like price low to high, price high to low and also by rating.
+3. various filter functionalities like categories on gender basis and discount basis also I filtered on price basis.
 
-### `npm run build`
+<img width="960" alt="product page" src="https://user-images.githubusercontent.com/87421852/163715663-7b15c1cb-3c32-41a7-80d7-dae58a537a3b.png">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Product description page
+1. You can see description on perticuler product which is clicked by user.
+2. zoom effect on image hover.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img width="960" alt="product description page" src="https://user-images.githubusercontent.com/87421852/163715667-4e3a3612-48e3-4fd2-bc9e-f1602e2024a6.png">
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Wishlist Page
+1. Which product added by user for future buying purpose this products will see in this page. also you can remove products simply click on "X" this button.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img width="960" alt="wishlist page" src="https://user-images.githubusercontent.com/87421852/163715668-e28d9424-30a5-491b-9ecd-3a6cfd713a17.png">
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Cart page
+1. As per requirements I used Modal effect for cart.
+2. In cart page we wiil see which product added user for buying purpose.
+3. You can see total number of product is cart and also the total amount payable for order.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<img width="956" alt="cart page" src="https://user-images.githubusercontent.com/87421852/163715669-355bd56b-c028-4bf9-88c5-4c24804a0314.png">
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Thank You for Reading !!!
+ 
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -12,7 +12,7 @@ export const Wishlist = () => {
 
 
     const showWishData = async () => {
-        var res = await fetch('http://localhost:4000/wishlist');
+        var res = await fetch('https://go-comet-backend.herokuapp.com/wishlist');
         let data = await res.json();
         setWishData(data.wishlist)
         setLength(data.wishlist.length)
@@ -21,7 +21,7 @@ export const Wishlist = () => {
 
     const handleDelete = async (_id) => {
           setWishData(wishData.filter(wishData => wishData._id !== _id));
-            await fetch(`http://localhost:4000/wishlist/${_id}`,{
+            await fetch(`https://go-comet-backend.herokuapp.com/wishlist/${_id}`,{
             method: 'DELETE',
             headers: {
             "Content-Type": "application/json"

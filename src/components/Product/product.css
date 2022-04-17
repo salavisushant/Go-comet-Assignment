@@ -1,15 +1,18 @@
 .mainDiv{
-    margin-top:7%;
+    margin-top:9%;
 }
 
 .prodctDiv{
     width:100%;
     display:grid;
-    grid-template-columns: 17% 80%;
+    grid-template-columns: 15% 80%;
 }
 
 .leftDiv{
-    border:1px solid black;
+    height: 850px;
+    border-right:0.7px solid #C4C4C4;
+     border-bottom:0.7px solid #C4C4C4;
+    margin-top:-16px;
 }
 
 .rightDiv{
@@ -119,5 +122,83 @@
 
 }
 
+.filters{
+  margin-top:2%;
+  font-size:2vw;
+  font-weight:700;
+}
+
+.selectBtn{
+  margin-left:10%;
+  width:18%;
+  border: 1px solid #C4C4C4;
+  margin-top:1%;
+}
+
+
+.btnDivpage{
+  margin-left: 45%;
+  display: flex;
+}
+
+.prevBtn{
+  width: 70px;
+  height:40px;
+
+  background-color: #FFFFFF;
+  color: black;
+  border-radius: 5px;
+}
+
+.nextBtn{
+  width: 70px;
+  height:40px;
+  border:none;
+  margin-left: 5%;
+  background-color: #FFFFFF;
+  color: black;
+  border: 0.5px solid black;
+   border-radius: 5px;
+}
+
+.pageNum{
+  font-size:30px;
+  text-align:center;
+  margin-top:17px;
+  margin-left:5px;
+}
+
+.checkDiv{
+  margin-left:10%;
+  margin-top:2%;
+}
+
+.checkDiv > input{
+  width: 15px;
+  height:15px;
+}
+
+.checkDiv>label{
+  font-size:15px;
+  margin-left: 2%;
+  font-weight:700;
+}
+
+.checkDiv1{
+   margin-left:10%;
+  margin-top:2%;
+}
+
+.checkDiv1 > input{
+  width: 15px;
+  height:15px;
+}
+
+.checkDiv1>label{
+  font-size:15px;
+  margin-left: 2%;
+  font-weight:500;
+  color: #6e6b6b;
+}
 
 

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const Product = () => {
     const [product, setProduct] = useState([]);
-    const [page, setPage] = useState(0)
+    const [page, setPage] = useState(1)
 
     useEffect(() => {
         getData()
@@ -37,7 +37,7 @@ export const Product = () => {
             sizes: sizes,
             category: category,
         };
-          fetch("http://localhost:4000/wishlist", {
+          fetch("https://go-comet-backend.herokuapp.com/wishlist", {
                 method: "POST",
                 body: JSON.stringify(payload),
                 headers: {
@@ -48,15 +48,168 @@ export const Product = () => {
     }
 
 
+
+   const sorting = (e) => {
+        const sorting = e.target.value;
+
+        const sortRes = [...product].sort((a, b) => {
+            if (sorting === "low") {
+                return a.price > b.price ? 1 : -1;
+            }
+
+            if (sorting === "high") {
+                return a.price < b.price ? 1 : -1;
+            }
+
+            if (sorting === "rating") {
+                 return a.ratings < b.ratings ? 1 : -1;
+            }
+        })
+        setProduct(sortRes)
+    }
+
+    const handleCheckedMen = (e) => {
+    if (e.target.checked) {
+            const rows = [...product].filter((row) => row.gender === "Men");
+            setProduct(rows);
+        }
+    };
+
+    const handleCheckedWomen = (e) => {
+        if (e.target.checked) {
+            const rows = [...product].filter((row) => row.gender === "Women");
+            setProduct(rows);
+        }
+    }
+
+    const handleCheckedKids = (e) => {
+        if (e.target.checked) {
+        const rows = [...product].filter((row) => row.gender === "Boys");
+        setProduct(rows);
+        }
+    }
+
+     const handleCheckedGirls = (e) => {
+         if (e.target.checked) {
+             const rows = [...product].filter((row) => row.gender === "Girls");
+             setProduct(rows);
+         }
+    }
+
+    const handleOne = (e) => {
+         if (e.target.checked) {
+             const rows = [...product].filter((row) => row.price > 0 && row.price <= 1000);
+             setProduct(rows);
+         }
+    }
+
+    const handleTwo = (e) => {
+         if (e.target.checked) {
+             const rows = [...product].filter((row) => row.price > 1000 && row.price <= 1500);
+             setProduct(rows);
+         }
+    }
+
+      const handleThree = (e) => {
+         if (e.target.checked) {
+             const rows = [...product].filter((row) => row.price > 1500 && row.price <= 2000);
+             setProduct(rows);
+         }
+    }
+
+      const handleFour = (e) => {
+         if (e.target.checked) {
+             const rows = [...product].filter((row) => row.price > 2000 && row.price <= 2500);
+             setProduct(rows);
+         }
+    }
+
     return (
         <div className="mainDiv">
             <div style={{marginLeft:"2%",lineHeight:"30%"}}>
                 <p style={{fontSize:"18px"}}>Home</p>
-                <p style={{fontSize:"18px",fontWeight:"700"}}>Myntra Fashion Store<span style={{color:"grey",fontWeight:"400"}}>-1245 items</span></p>
+                <p style={{ fontSize: "18px", fontWeight: "700" }}>Myntra Fashion Store<span style={{ color: "grey", fontWeight: "400" }}>-1245 items</span></p>
+                <div style={{display: "flex"}}>
+                    <p className="filters">FILTERS</p>
+                    <select className="selectBtn" onChange={sorting}>
+                        <option>Select</option>
+                        <option value="low">Price : Low to High</option>
+                        <option value="high">Price : High to Low</option>
+                        <option value="rating">Customer Rating</option>
+                    </select>
+                    <div className="btnDivpage">
+                        <button className="prevBtn" disabled={page === 1} onClick={()=>setPage(page-1)}>Prev</button>
+                        <p className="pageNum">{ page}</p>
+                        <button className="nextBtn" onClick={()=>setPage(page+1)}>Next</button>
+                    </div>
+                </div>
             </div>
+            <hr/>
             <div className="prodctDiv">
                 <div className="leftDiv">
-
+                    <div className="checkDiv">
+                         <input type="checkbox" onChange={handleCheckedMen} /><label>Men</label>
+                        <br/>
+                        <input type="checkbox" onChange={handleCheckedWomen}  /><label>Women</label>
+                        <br/>
+                        <input type="checkbox" onChange={handleCheckedKids} /><label>Boys</label>
+                        <br/>
+                        <input type="checkbox" onChange={handleCheckedGirls}/><label>Girls</label>
+                   </div>
+                    <hr />
+                    <div className="checkDiv1">
+                        <h4>PRICE</h4>
+                         <input type="checkbox" onChange={handleOne} /><label>RS. 0 to RS.1000</label>
+                        <br/>
+                        <input type="checkbox" onChange={handleTwo}/><label>RS. 1001 to RS.1500</label>
+                        <br/>
+                        <input type="checkbox" onChange={handleThree}/><label>Rs. 1501 to Rs.2000</label>
+                        <br/>
+                        <input type="checkbox" onChange={ handleFour}/><label>RS.2001 to RS.2500</label>
+                    </div>
+                    <hr/>
+                      <div className="checkDiv1">
+                        <h4>BRAND</h4>
+                         <input type="checkbox" /><label>H&M</label>
+                        <br/>
+                        <input type="checkbox" /><label>Roadster</label>
+                        <br/>
+                        <input type="checkbox" /><label>Adidas</label>
+                        <br/>
+                        <input type="checkbox" /><label>Nike</label>
+                         <br/>
+                        <input type="checkbox" /><label>PUMA</label>
+                         <br/>
+                        <input type="checkbox"/><label>HRX</label>
+                         <br/>
+                        <input type="checkbox"/><label>Khadi Bhandar</label>
+                         <br/>
+                        <input type="checkbox" /><label>Myntra Super</label>
+                         <br/>
+                        <input type="checkbox"/><label>OneX</label>
+                    </div>
+                    <hr/>
+                      <div className="checkDiv1">
+                        <h5>DISCOUNT RANGE</h5>
+                         <input type="checkbox" /><label>10% and above</label>
+                        <br/>
+                        <input type="checkbox" /><label>20% and above</label>
+                        <br/>
+                        <input type="checkbox" /><label>30% and above</label>
+                        <br/>
+                        <input type="checkbox" /><label>40% and above</label>
+                        <br/>
+                        <input type="checkbox" /><label>50% and above</label>
+                        <br/>
+                        <input type="checkbox" /><label>60% and above</label>
+                        <br/>
+                        <input type="checkbox" /><label>70% and above</label>
+                        <br/>
+                        <input type="checkbox" /><label>80% and above</label>
+                        <br/>
+                        <input type="checkbox" /><label>90% and above</label>
+                   </div>
+                   
                 </div>
                 <div className="rightDiv">
                     {
