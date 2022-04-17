@@ -1,4 +1,4 @@
-### GoComet Assignment
+# GoComet Assignment
 
 ## Deployed Link - https://go-comet-assignment-two.vercel.app/
 
@@ -49,7 +49,7 @@
 
 
 
-### Thank You for Reading !!!
+# Thank You for Reading !!!
  
 
 
