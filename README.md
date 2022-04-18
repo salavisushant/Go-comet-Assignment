@@ -5,7 +5,7 @@
 ## Tech Stack
 1. For Frontend - HTML,CSS,Javascript and ReactJs.
 2. For Backend - NodeJs, ExpressJS, and MongoDB.
-3. I used Bootstrap-React only for carousel and modal effect.
+3. I used React-Bootstrap only for carousel and modal effect.
 
 ## Deployment
 1. For Frontend deployement I used Vercel.
