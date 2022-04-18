@@ -7,12 +7,16 @@ import { useState,useEffect, useContext } from "react";
 import { AuthContext } from "../Context/context";
 
 const Div = styled.nav`
-position:fixed;
+overflow: hidden;
+top: 0;
+width: 100%;
+position: fixed;
 display: flex;
 padding:5px 10px;
 width: 100%;
 height:80px;
 top: 0;
+z-index:300;
 margin-left: 5%;
 right: 0;
 align-items: center;
