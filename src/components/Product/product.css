@@ -137,8 +137,9 @@
 
 
 .btnDivpage{
-  margin-left: 45%;
+  margin-left: 20%;
   display: flex;
+  margin-top: 12px;
 }
 
 .prevBtn{

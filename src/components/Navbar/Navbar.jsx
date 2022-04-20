@@ -110,7 +110,8 @@ export const Navbar = () => {
                   <div style={{display:"flex",justifyContent:"space-between"}}>  <p className="cartBrand">{el.brand}</p><img  onClick={() =>handleDeleteCart(el._id)}  src="https://img.icons8.com/ios-glyphs/50/ff3f6c/filled-trash.png" alt=""/></div>
                   <p className="cartCategory">{el.category}</p>
                     <div style={{ display: 'flex'}}><p style={{ fontSize: "17px", fontWeight: "700" }}>{"Rs. " + el.price}</p><p style={{ marginLeft: "2%", textDecoration: "line-through", fontSize: "16px" }}>{"Rs." + el.off_price}</p><p style={{ marginLeft: "4%", fontSize: "15px", color: "#FF905A" }}>({el.discount} %OFF)</p></div>
-                    <img className="giftImg" src="https://user-images.githubusercontent.com/87421852/163676456-a0a4bc23-cd5b-4b7f-b15a-647824a73a0e.png" alt="" />
+                  <p className="bagSize">Size : { el.sizes}</p>
+                  <img className="giftImg" src="https://user-images.githubusercontent.com/87421852/163676456-a0a4bc23-cd5b-4b7f-b15a-647824a73a0e.png" alt="" />
                 </div>
             
               </div>

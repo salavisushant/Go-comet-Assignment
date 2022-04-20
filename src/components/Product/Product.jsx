@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 
 export const Product = () => {
     const [product, setProduct] = useState([]);
-    const [page, setPage] = useState(1)
+    const [page, setPage] = useState(1);
+    const [search, setSearch] = useState("")
 
     useEffect(() => {
         getData()
@@ -137,6 +138,7 @@ export const Product = () => {
                         <option value="high">Price : High to Low</option>
                         <option value="rating">Customer Rating</option>
                     </select>
+                    <input style={{ marginLeft:"2%",width:"25%",height:"35px",marginTop:"15px" }} type="text" placeholder="Search product here" onChange={(e)=>setSearch(e.target.value)}/>
                     <div className="btnDivpage">
                         <button className="prevBtn" disabled={page === 1} onClick={()=>setPage(page-1)}>Prev</button>
                         <p className="pageNum">{ page}</p>
@@ -213,7 +215,14 @@ export const Product = () => {
                 </div>
                 <div className="rightDiv">
                     {
-                        product.map((e) => (
+                        product.filter((name) =>{
+                                if (search === "") {
+                                    return product;
+                                } else {
+                                    return name.category.toLowerCase().includes(search.toLowerCase());
+                                }
+                            })
+                            .map((e) => (
                             <div className="mainBox" key={e._id}>
                                   <Link style={{textDecoration:"none",color:"black"}} to={`/${e._id}`}>
                               <img className="prodImg" src={e.images} alt="" />
